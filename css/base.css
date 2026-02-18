@@ -1,0 +1,162 @@
+/* ============================================
+   AIVC Base Styles
+   Reset, typography, body background
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---- Body ---- */
+body {
+  background-color: var(--color-bg-cream);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-neutral-dark);
+}
+
+h1 { font-size: clamp(2.25rem, 5vw, var(--text-display-xl)); }
+h2 { font-size: clamp(1.75rem, 4vw, var(--text-display-lg)); margin-bottom: var(--space-4); }
+h3 { font-size: var(--text-heading-md); }
+h4 { font-size: var(--text-heading-sm); }
+h5 { font-size: var(--text-body-lg); }
+h6 { font-size: var(--text-body-md); }
+
+p {
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+
+/* Script font utility */
+.script {
+  font-family: var(--font-script);
+  font-weight: 700;
+}
+
+/* Muted text */
+.muted {
+  color: var(--color-muted-gray);
+}
+
+.text-sm {
+  font-size: var(--text-body-sm);
+}
+
+/* ---- Lists ---- */
+ul, ol {
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+li {
+  margin-bottom: var(--space-1);
+}
+
+/* ---- Links ---- */
+a {
+  color: var(--color-primary-red);
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-out-cubic);
+}
+
+a:hover {
+  color: #e03355;
+}
+
+/* Slide-in underline effect */
+.link {
+  position: relative;
+  display: inline-block;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--motion-fast) var(--ease-out-cubic);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* ---- Images ---- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Focus Styles ---- */
+:focus-visible {
+  outline: 3px solid var(--color-primary-blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary-red);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: var(--z-toast);
+  transition: top var(--motion-fast) var(--ease-out-cubic);
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: rgba(255, 68, 102, 0.2);
+  color: var(--color-neutral-dark);
+}
+
+/* ---- Screenreader Only ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
