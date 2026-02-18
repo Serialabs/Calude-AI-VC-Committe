@@ -1,0 +1,105 @@
+/* ============================================
+   AIVC Animation System
+   Scroll reveals, hover utilities, keyframes
+   ============================================ */
+
+/* ---- Scroll Reveal: Fade Up ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--motion-slow) var(--ease-out-cubic),
+    transform var(--motion-slow) var(--ease-out-cubic);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Staggered Reveal Children ---- */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
+.reveal-stagger > .reveal:nth-child(7) { transition-delay: 600ms; }
+.reveal-stagger > .reveal:nth-child(8) { transition-delay: 700ms; }
+.reveal-stagger > .reveal:nth-child(9) { transition-delay: 800ms; }
+.reveal-stagger > .reveal:nth-child(10) { transition-delay: 900ms; }
+
+/* ---- Slide In from Sides ---- */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity var(--motion-medium) var(--ease-out-cubic),
+    transform var(--motion-medium) var(--ease-out-cubic);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity var(--motion-medium) var(--ease-out-cubic),
+    transform var(--motion-medium) var(--ease-out-cubic);
+}
+
+.slide-in-left.visible,
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- Wiggle (for icons) ---- */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 300ms ease-in-out 2;
+}
+
+/* ---- Hover Lift Utility ---- */
+.hover-lift {
+  transition:
+    transform var(--motion-medium) var(--ease-out-cubic),
+    box-shadow var(--motion-medium) var(--ease-out-cubic);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Fade In ---- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn var(--motion-slow) var(--ease-out-cubic) both;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .slide-in-left,
+  .slide-in-right {
+    opacity: 1;
+    transform: none;
+  }
+}

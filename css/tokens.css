@@ -1,0 +1,81 @@
+/* ============================================
+   AIVC Design Tokens
+   All CSS custom properties from Site B spec
+   ============================================ */
+
+:root {
+  /* ---- Colors: Backgrounds ---- */
+  --color-bg-cream: #FFFAF2;
+  --color-bg-dark: #141414;
+  --color-neutral-light: #FFF7F2;
+
+  /* ---- Colors: Primary Accents ---- */
+  --color-primary-red: #FF4466;
+  --color-primary-green: #2EB67D;
+  --color-primary-blue: #65A9E6;
+  --color-primary-yellow: #F7D548;
+  --color-primary-purple: #9373B2;
+
+  /* ---- Colors: Neutrals ---- */
+  --color-neutral-dark: #1A1A1A;
+  --color-muted-gray: #666666;
+
+  /* ---- Colors: Status ---- */
+  --color-success: #2ECC71;
+  --color-warning: #F39C12;
+  --color-error: #E74C3C;
+  --color-caution: #FFDD95;
+
+  /* ---- Typography: Families ---- */
+  --font-script: 'Caveat', cursive;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+
+  /* ---- Typography: Sizes ---- */
+  --text-display-xxl: 4.5rem;
+  --text-display-xl: 4rem;
+  --text-display-lg: 3rem;
+  --text-heading-md: 2rem;
+  --text-heading-sm: 1.5rem;
+  --text-body-lg: 1.125rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label-xs: 0.75rem;
+
+  /* ---- Spacing (8-point scale) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 2.5rem;
+  --space-7: 4rem;
+
+  /* ---- Radius ---- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  /* ---- Blur ---- */
+  --blur-overlay: 4px;
+
+  /* ---- Motion ---- */
+  --motion-fast: 150ms;
+  --motion-medium: 250ms;
+  --motion-slow: 500ms;
+  --ease-out-cubic: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-quad: cubic-bezier(0.45, 0, 0.55, 1);
+
+  /* ---- Z-Index Scale ---- */
+  --z-background: 0;
+  --z-content: 1;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}
